@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="bubbles">
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+        <span class="four"></span>
+        <span class="five"></span>
+        <span class="six"></span>
+        <span class="seven"></span>
+    </div>
+    <div class="container">
+        <h1 class="header">Sign Up</h1>
+        <form action="https://www.youtube.com/">
+
+                <!-- ///////////      EMAIL-FIELD    /////////// -->
+
+            <div class="field email-box">
+                <div class="input-box ">
+                <input type="text" placeholder="Enter your email" class="email"></div>
+                <span class="email-error error">
+                    <i class='bx bx-error-circle error-icon'></i>
+                    <p class="error-text">Please enter a valid email</p>
+                </span>
+            </div>
+
+                <!-- ///////////      PASSWORD-FIELD    /////////// -->
+
+            <div class="field password-box">
+                <div class="input-box">
+                <input type="password" placeholder="Create password" class="pass" maxlength="15">
+                <i class='bx bx-hide show-hide'></i>
+            </div>
+                <span class="password-error error">
+                    <i class='bx bx-error-circle error-icon'></i>
+                    <p class="error-text">Please enter 8 to 15 characters with atleast 1 number and 1 special character.</p>
+                </span>
+            </div>
+
+                <!-- ///////////      CONFIRM PASSWORD-FIELD    /////////// -->
+
+            <div class="field confirm-pass">
+                <div class="input-box ">
+                <input type="password" placeholder="Confirm password" class="confPass">
+                <i class='bx bx-hide show-hide'></i>
+            </div>
+                <span class="cPassword-error error">
+                    <i class='bx bx-error-circle error-icon'></i>
+                    <p class="error-text">Password don't match</p>
+                </span>
+            </div>
+            <div class="input-box btn">
+                <input type="submit" value="Submit Now">
+            </div>
+        </form>
+    </div>
+    
+</body>
+<script src="app.js"></script>
+</html>
