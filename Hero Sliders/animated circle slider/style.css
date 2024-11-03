@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+
+body {
+    color: #fff;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar a{
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover{
+    color:#c40094;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.bg-slide,
+.bg-slide .circle,
+.bg-slide .circle img,
+.circle-dark{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.bg-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bg-slide .circle{
+    pointer-events: none;
+    user-select: none;
+    overflow: hidden;
+}
+
+.bg-slide.active .circle{
+    z-index: 10;
+}
+
+
+.bg-slide .circle.large,
+.circle-dark{
+    clip-path: circle(50% at 50% 50%);
+}
+.bg-slide .circle.small{
+    clip-path: circle(30% at 50% 50%);
+    z-index: 12;
+}
+
+
+.bg-slide .circle img{
+    object-fit: cover;
+    transform: rotate(0deg) scale(4.2);
+    opacity: 0;
+    transition: transform 1.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.bg-slide.active .circle img{
+    transform: rotate(360deg) scale(2.2);
+    opacity: 1;
+}
+
+.bg-slide.after-active .circle img{
+    transform: rotate(360deg) scale(4.2);
+    opacity: 0;
+}
+
+.bg-slide.active .circle.bg img,
+.bg-slide.after-active .circle.bg img {
+    transition-delay: .9s;
+}
+
+.bg-slide.active .circle.large img,
+.bg-slide.after-active .circle.large img {
+    transition-delay: .6s;
+}
+.bg-slide.active .circle.small img,
+.bg-slide.after-active .circle.small img {
+    transition-delay: .3s;
+}
+
+.circle-dark{
+    background: rgba(0, 0, 0, .1);
+    z-index: 11;
+}
+
+.bg-slide .content-text{
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bg-slide.active .content-text{
+    z-index: 101;
+}
+
+.content-text .place,
+.content-text .country {
+    overflow: hidden;
+}
+
+.content-text .country{
+    margin-top: 60px;
+}
+
+.content-text .place h1, 
+.content-text .country h2{
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1;
+    opacity: 0;
+    transition: transform .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-delay: 1s;
+}
+
+.content-text .place h1 {
+    font-size: 60px;
+    letter-spacing: 80px;
+    margin-right: -80px;
+    transform: translateY(100%);
+}
+
+.content-text .country h2{
+    font-size: 50px;
+    letter-spacing: 30px;
+    margin-right: -30px;
+    transform: translateY(-100%);
+}
+
+.bg-slide.active .content-text .place h1, 
+.bg-slide.active .content-text .country h2{
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.bg-slide.after-active .content-text .place h1 {
+    transform: translateY(-100%);
+    opacity: 1;
+}
+.bg-slide.after-active .content-text .country h2 {
+    transform: translateY(100%);
+    opacity: 1;
+}
+
+
+.line{
+    position: absolute;
+    top: 50.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 3px;
+    background: #fff;
+    z-index: 100;
+}
+
+.rotate-btn{
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    width: 60px;
+    height: 60px;
+    background: #aba72c;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i{
+        font-size: 40px;
+        color: #fff;
+    }
+}
+
+.rotate-btn.active {
+    transform: rotate(360deg);
+    pointer-events: none;
+    transition: transform .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-delay: .2s;
+}
